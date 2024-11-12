@@ -16,7 +16,7 @@ function Register() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/users/register', { username, password });
+      const response = await axios.post('https://daily-blog-six.vercel.app/api/v1/users/register', { username, password });
       setMessage(response.data.message); // Success message
       setError(''); // Clear any previous errors
       setUsername('');

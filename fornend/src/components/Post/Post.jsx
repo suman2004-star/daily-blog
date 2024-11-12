@@ -11,7 +11,7 @@ function Post() {
 
   const getPost = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/posts/posts/${id}`);
+      const response = await axios.get(`https://daily-blog-six.vercel.app/api/v1/posts/posts/${id}`);
       setPost(response.data.data); // Assuming data is nested in response.data.data
     } catch (error) {
       console.error("Failed to fetch post:", error);
@@ -22,7 +22,7 @@ function Post() {
     const confirmDelete = window.confirm("Are you sure you want to delete this post?");
     if (!confirmDelete) return;
     try {
-      await axios.delete(`http://localhost:8000/api/v1/posts/delete/${id}`);
+      await axios.delete(`https://daily-blog-six.vercel.app/api/v1/posts/delete/${id}`);
       navigate("/AllPost");
     } catch (error) {
       console.error("Failed to delete post:", error);
