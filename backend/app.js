@@ -4,7 +4,11 @@ import cookieParser from "cookie-parser"
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: "https://daily-blog-buv5.vercel.app", // Your frontend URL
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true // If you are using cookies
+  }));
 
 app.use(express.json({limit: "16kb"}))
 // app.use(express.urlencoded({extended: true, limit: "16kb"}))
