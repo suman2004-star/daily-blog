@@ -4,9 +4,14 @@ import cookieParser from "cookie-parser"
 
 const app = express()
 
-app.use(cors({
-   
-  }));
+app.use(
+  cors({
+    origin: 'https://daily-blog-blush.vercel.app', // Allow only your frontend domain
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+  })
+);
 
 app.use(express.json({limit: "16kb"}))
 // app.use(express.urlencoded({extended: true, limit: "16kb"}))
