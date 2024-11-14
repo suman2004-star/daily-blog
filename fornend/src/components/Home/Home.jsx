@@ -17,7 +17,7 @@ const Home = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get('https://daily-blog-six.vercel.app/api/v1/posts/posts');
+      const response = await axios.get('http://localhost:8000/api/v1/posts/posts');
       setPosts(response.data.data); // Set 'data' array from response
       console.log(posts);
       

@@ -60,8 +60,8 @@ const AddPost = () => {
     formData.append("image", image);
     try {
       const endpoint = id
-    ? `https://daily-blog-six.vercel.app/api/v1/posts/updatePost/${id}`  // Correct format
-    : "https://daily-blog-six.vercel.app/api/v1/posts/post";
+    ? `http://localhost:8000/api/v1/posts/updatePost/${id}`  // Correct format
+    : "http://localhost:8000/api/v1/posts/post";
 
       const method = id ? "put" : "post";
 

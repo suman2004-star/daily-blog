@@ -16,7 +16,7 @@ function Login() {
     e.preventDefault();
     setError(null);
     try {
-      const response = await axios.post('https://daily-blog-six.vercel.app/api/v1/users/login', { username, password });
+      const response = await axios.post('http://localhost:8000/api/v1/users/login', { username, password });
       const { token, user,message } = response.data;
       console.log("User data:", user);
       
